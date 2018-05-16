@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  *{
+    margin:0px;
+    padding:0px;
+  }
+  .circle {
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    transition: clip-path .2s;
+    -webkit-mask: radial-gradient(transparent, transparent 40px, #000 40px);
+    -moz-mask: radial-gradient(transparent, transparent 40px, #000 40px);
+    -ms-mask: radial-gradient(transparent, transparent 40px, #000 40px);
+    -o-mask: radial-gradient(transparent, transparent 40px, #000 40px);
+    mask: radial-gradient(transparent 40px, #000 40px);
+}
+.circle-group {
+    width: 100%; height: 100%;
+    position: absolute;
+    left: 0; top: 0;    
+    transform: scale(1.2);
+}
+.circle-group div {
+    width: 100%; height: 100%;
+    clip: rect(0 102px 42px 53px);
+    position: absolute;
+    overflow: hidden;
+}
+.circle-group div::after {
+    content: '';
+    width: 100%; height: 100%;
+    background: currentColor;
+    position: absolute;
+    clip: rect(0 50px 510px 0);
+    transform: rotate(60deg);
+    border-radius: 50%;
+}
+
+.circle-group div:nth-of-type(1) {
+    transform: rotate(0);
+    color: #9ED110;    
+}
+
+.circle-group div:nth-of-type(2) {
+    transform: rotate(60deg);
+    color: rgb(199, 36, 199);    
+}
+.circle-group div:nth-of-type(3) {
+    transform: rotate(120deg);
+    color: rgb(75, 16, 212);    
+}
+.circle-group div:nth-of-type(4) {
+    transform: rotate(180deg);
+    color: rgb(191, 223, 10);    
+}
+.circle-group div:nth-of-type(5) {
+    transform: rotate(2400deg);
+    color: rgb(141, 196, 233);    
+}
+.circle-group div:nth-of-type(6) {
+    transform: rotate(300deg);
+    color: rgb(231, 137, 14);    
+}
+.circle-group div{
+  font-size:16px;
+  color:#000;
+}
+.ring1{
+  position: absolute;
+  left: 65px;
+  top:10px;
+  z-index: 100;
+  color: #000;
+  transform: rotate(30deg);
+}
+.ring2{
+  position: absolute;
+  left: 65px;
+  top:10px;
+  z-index: 100;
+  color: #000;
+  transform: rotate(30deg);
+}
+.ring3{
+  position: absolute;
+  left: 65px;
+  top:10px;
+  z-index: 100;
+  color: #000;
+  transform: rotate(30deg);
+}
+.ring4{
+  position: absolute;
+  left: 65px;
+  top:10px;
+  z-index: 100;
+  color: #000;
+  transform: rotate(30deg);
+}
+.ring5{
+  position: absolute;
+  left: 65px;
+  top:10px;
+  z-index: 100;
+  color: #000;
+  transform: rotate(30deg);
+}
+.ring6{
+  position: absolute;
+  left: 65px;
+  top:10px;
+  z-index: 100;
+  color: #000;
+  transform: rotate(30deg);
+}
+  </style>
+</head>
+<body>
+    <div id="circle" class="circle">
+        <div class="circle-group">
+            <div><span class="ring1">1</span></div>
+            <div><span class="ring2">2</span></div>
+            <div><span class="ring3">3</span></div>
+            <div><span class="ring4">4</span></div>
+            <div><span class="ring5">5</span></div>
+            <div><span class="ring6">6</span></div>
+        </div>
+    </div>
+</body>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script> 
+<script>
+  $(".circle-group").find("div").click(function(){
+    console.log($(this).html())
+  })
+</script>
+</html>
